@@ -21,28 +21,29 @@ module.exports = (app) => {
       res.send(todo);
     });
   });
-  app.post('/api/todo', (req, res) => {
+  app.post('/api/todos', (req, res) => {
     const { todo, isDone, hasAttachment } = req.body;
-    if (req.body.id) {
-      Todos.findByIdAndUpdate(req.body.id, { todo, isDone, hasAttachment }, (err, updatedTodo) => {
+    const newTodo = new Todos({
+      username: 'test', todo, isDone, hasAttachment,
+    });
+    newTodo.save((err) => {
+      if (err) {
+        throw err;
+      }
+      res.send(newTodo);
+    });
+  });
+  app.put('/api/todos/:id', (req, res) => {
+    const { todo, isDone, hasAttachment } = req.body;
+    Todos.findByIdAndUpdate(req.params.id, { todo, isDone, hasAttachment }, { new: true },
+      (err, updatedTodo) => {
         if (err) {
           throw err;
         }
         res.send(updatedTodo);
       });
-    } else {
-      const newTodo = new Todos({
-        username: 'test', todo, isDone, hasAttachment,
-      });
-      newTodo.save((err) => {
-        if (err) {
-          throw err;
-        }
-        res.send(newTodo);
-      });
-    }
   });
-  app.delete('/api/todo/:id', (req, res) => {
+  app.delete('/api/todos/:id', (req, res) => {
     const { todo, isDone, hasAttachment } = req.body;
     Todos.findByIdAndRemove(req.params.id, { todo, isDone, hasAttachment }, (err) => {
       if (err) {
