@@ -1,4 +1,7 @@
 {
     "DB_USER": "todouser",
-    "DB_PASSWORD": "todopass"
+    "DB_PASSWORD": "todopass",
+    "DB_DATABASE": "todobase",
+    "DB_HOST": "localhost",
+    "DB_PORT": 27017
 }

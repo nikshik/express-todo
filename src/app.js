@@ -9,12 +9,11 @@ app.use('/assets', express.static(`${__dirname}/public`));
 
 app.set('view engine', 'mustache');
 
-mongoose.connect(config.getDbConnectionString(), { useNewUrlParser: true }, (err, db) => {
+mongoose.connect(config.getDbConnectionString(), { useNewUrlParser: true }, (err) => {
   if (err) {
-    console.log(err);
+    throw err;
   }
   console.log('connected to database');
-  db.close();
 });
 
 app.listen(port);

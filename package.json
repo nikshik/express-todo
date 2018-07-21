@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./src/app.js",
+    "seed": "node ./db/seedData",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nik Shikov",
@@ -12,7 +14,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongoose": "^5.2.4",
-    "mustache": "^2.3.0"
+    "mustache": "^2.3.0",
+    "node-mongo-seeds": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

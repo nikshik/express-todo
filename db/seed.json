@@ -1,0 +1,32 @@
+[
+  {
+    "username": "nik.shikov@gmail.com",
+    "todo": "consequat",
+    "isDone": false,
+    "hasAttachment": false
+  },
+  {
+    "username": "nik.shikov@gmail.com",
+    "todo": "consectetur",
+    "isDone": false,
+    "hasAttachment": false
+  },
+  {
+    "username": "nik.shikov@gmail.com",
+    "todo": "adipisicing",
+    "isDone": true,
+    "hasAttachment": true
+  },
+  {
+    "username": "nik.shikov@gmail.com",
+    "todo": "in",
+    "isDone": false,
+    "hasAttachment": true
+  },
+  {
+    "username": "nik.shikov@gmail.com",
+    "todo": "nisi",
+    "isDone": true,
+    "hasAttachment": false
+  }
+]
