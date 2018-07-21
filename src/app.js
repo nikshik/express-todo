@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const config = require('../config');
+const apiController = require('./controllers/apiController');
 
 const app = express();
 const port = process.env.SERVER_PORT || 3000;
@@ -15,5 +16,6 @@ mongoose.connect(config.getDbConnectionString(), { useNewUrlParser: true }, (err
   }
   console.log('connected to database');
 });
+apiController(app);
 
 app.listen(port);
